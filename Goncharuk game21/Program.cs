@@ -13,15 +13,11 @@ namespace Goncharuk_game21
         {
             public string Suit;
             public Value value;
-
-
         }
 
         static void Main(string[] args)
         {
-
             Deck[] deck = new Deck[36];
-
             for (int i = 0; i < 36; i++)
             {
                 switch (i / 9)
@@ -83,7 +79,6 @@ namespace Goncharuk_game21
             Random rand = new Random();
             Deck temp;
 
-
             for (int i = 0; i < deck.Length; i++)
             {
                 if (i == 0)
@@ -101,10 +96,8 @@ namespace Goncharuk_game21
                     Console.WriteLine($"Game  {Game} Player win = {Player}  Computer win = {Computer} ");
                     Console.WriteLine();
                     Game++;
-                   
                 }
                 bool BlackJeck = false;
-
                 int n = rand.Next(0, 2);
                 if (n == 1) BlackJeck = false;
                 else BlackJeck = true;
@@ -115,7 +108,6 @@ namespace Goncharuk_game21
 
                         PlayerSum += (int)deck[i].value;
                         Console.WriteLine($"{deck[i].value} of {deck[i].Suit}   Player points = { PlayerSum}");
-                        // Console.WriteLine($"Player points = { PlayerSum}");
                         if (i == 1) BlackJeck = true;
                         if (i == 4) BlackJeck = false;
                         i++;
@@ -143,7 +135,6 @@ namespace Goncharuk_game21
                     {
                         ComputerSum += (int)deck[i].value;
                         Console.WriteLine($"{deck[i].value} of {deck[i].Suit}   Computer points = {ComputerSum}");
-                        //Console.WriteLine($"Computer points = {ComputerSum}");
                         if (i == 1) BlackJeck = false;
                         if (i == 3) BlackJeck = false;
                         i++;
@@ -344,7 +335,6 @@ namespace Goncharuk_game21
                                     Console.WriteLine($"Player win = {Player}  Computer win = {Computer}");
                                     break;
                                 }
-
                             }
                             else if (ComputerSum == 21)
                             {
@@ -367,10 +357,6 @@ namespace Goncharuk_game21
                     }
                 }
             }
-
-            
-
         }
-
     }
 }
